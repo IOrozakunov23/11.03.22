@@ -5,40 +5,244 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
-    <div id="root"></div>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
     <div id="rootReact"></div>
+    <div id="rootJSX"></div>
+    <br />
+    <div id="root"></div>
 
-    <script>
-      const div = document.createElement("div");
-      div.textContent = Math.random();
-      div.className = "hello-world";
-      document.querySelector("#root").append(div);
+    <!-- <div><span>??</span></div> -->
 
-      const span = document.createElement("span");
-      span.textContent = Math.random();
-      div.append(span);
+    <script type="text/babel">
+      function RandomNumber(props) {
+        return (
+          <div className="hello-world">
+            <span>
+              <strong>{(Math.random() * props.max).toFixed()}</strong>
+              <mark> - this is a random number</mark>
+            </span>
+          </div>
+        );
+      }
 
-      const strong = document.createElement("strong");
-      strong.textContent = Math.random();
-      span.append(strong);
-      div.append(span);
+      // function MyExample() {
+      //   return (
+      //     <div className="hello-world">
+      //       <h1>Hello World</h1>
+      //       <p>
+      //         Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      //         Voluptatibus minus qui tempore iusto totam placeat, cum magni.
+      //         Voluptas id dolores sed eligendi quas vitae quaerat ut optio.
+      //         Expedita, quos reiciendis.
+      //       </p>
+      //     </div>
+      //   );
+      // }
+
+      // function example1() {
+      //   return (
+      //     <div className="hello-world">
+      //       <a href="#">
+      //         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+      //         optio, unde aperiam aut rerum, quisquam dolorum provident
+      //         repellendus cupiditate incidunt dolorem magni tenetur nulla
+      //         adipisci hic ab sed minus! Molestiae! Lorem ipsum dolor sit amet
+      //         consectetur adipisicing elit. Maxime alias ad nihil cupiditate
+      //         assumenda quae rem neque ipsam at ea, dolorem earum eius fugit
+      //         voluptates tenetur officiis, asperiores aspernatur. Delectus?
+      //       </a>
+      //       <aside>
+      //         <button>find</button>
+      //         <button>follow link</button>
+      //         <button>copy</button>
+      //       </aside>
+      //     </div>
+      //   );
+      // }
+
+      // function example2() {
+      //   return (
+      //     <div className="hello-world">
+      //       <p>
+      //         Lorem ipsum dolor sit <b>amet consectetur adipisicing elit</b>.
+      //         Porro quod numquam quasi architecto labore, ducimus deserunt
+      //         adipisci nemo enim minus tenetur, odit, possimus corporis! Illum,
+      //         aliquam natus? Molestiae, fugiat! Dolore!
+      //       </p>
+      //       <blockquote>
+      //         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      //         Officiis, vel. Perspiciatis provident sint animi consequuntur?
+      //         Mollitia ea dolore laborum quam rerum quo, minus commodi iusto
+      //         quidem odio, neque libero maiores!
+      //       </blockquote>
+      //     </div>
+      //   );
+      // }
+
+      // function example3() {
+      //   return (
+      //     <div className="hello-world">
+      //       <h2>Computer Code</h2>
+      //       <p>Some programming code:</p>
+
+      //       <code>x = 5; y = 6; z = x + y;</code>
+      //     </div>
+      //   );
+      // }
+
+      // function example4() {
+      //   return (
+      //     <div className="hello-world">
+      //       <p>
+      //         WWF's goal is to:{" "}
+      //         <q>Build a future where people live in harmony with nature.</q>
+      //       </p>
+      //     </div>
+      //   );
+      // }
+
+      // function example5() {
+      //   return (
+      //     <div class="hello-world">
+      //       <dt>
+      //         <b>Lorem</b> - ipsum dolor sit amet consectetur adipisicing elit.
+      //         Praesentium officia numquam autem, corrupti cum est minima in
+      //         incidunt? Voluptates harum temporibus voluptatem magnam cum?
+      //         Similique adipisci obcaecati fugit voluptates ea.
+      //       </dt>
+      //     </div>
+      //   );
+      // }
+
+      // function example6() {
+      //   return (
+      //     <div class="hello-world">
+      //       <ul>
+      //         <li>
+      //           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
+      //           cumque possimus iste recusandae, id rem laborum quia
+      //           reprehenderit aspernatur totam enim suscipit tempore
+      //           dignissimos. Eaque quo exercitationem ad optio mollitia.
+      //         </li>
+      //         <li>
+      //           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      //           Eveniet quod laboriosam pariatur dolores ipsum nesciunt,
+      //           reiciendis assumenda sed tenetur mollitia, impedit consequatur
+      //           dignissimos placeat asperiores nobis accusantium quibusdam.
+      //           Laudantium, quod.
+      //         </li>
+      //         <li>
+      //           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum,
+      //           blanditiis. Quaerat eaque impedit, nemo aspernatur modi ea
+      //           asperiores maxime mollitia deleniti a, animi sunt provident
+      //           vitae aliquam in, quidem ipsum?.
+      //         </li>
+      //       </ul>
+      //     </div>
+      //   );
+      // }
+
+      function example7() {
+        return (
+          <div class="hello-world">
+            <p>
+              The <abbr title="World Health Organization">WHO</abbr> was founded
+              in 1948.
+            </p>
+          </div>
+        );
+      }
+
+      function example8() {
+        return (
+          <div class="hello-world">
+            <h2>HTML Iframes</h2>
+            <p>
+              You can use the height and width attributes to specify the size of
+              the iframe:
+            </p>
+
+            <iframe
+              src="demo_iframe.htm"
+              height="200"
+              width="300"
+              title="Iframe Example"
+            ></iframe>
+          </div>
+        );
+      }
+
+      function example9() {
+        return (
+          <div class="hello-world">
+            <p>
+              Save the document by pressing <kbd>Ctrl + S</kbd>
+            </p>
+          </div>
+        );
+      }
+
+      const App = (
+        <div>
+          <RandomNumber max={10} />
+          <RandomNumber max={100} />
+          <RandomNumber max={1000} />
+          <RandomNumber max={10000} />
+          <MyExample />
+          <example1 />
+          <example2 />
+          <example3 />
+          <example4 />
+          <example5 />
+          <example6 />
+          <example7 />
+          <example8 />
+          <example9 />
+        </div>
+      );
+
+      ReactDOM.render(App, document.querySelector("#root"));
+    </script>
+
+    <script type="text/babel">
+      const jsxDiv = (
+        <div className="hello-world">
+          <span>
+            <strong>{Math.random()}</strong>
+            <mark> - this is a random number</mark>
+          </span>
+        </div>
+      );
+
+      ReactDOM.render(reactDiv, document.querySelector("#rootJSX"));
     </script>
 
     <script>
-      const reactDiv = React.createElement("div", {
-        className: "hello-world",
-        children: React.createElement("span", {
-          children: React.createElement("strong", {
-            children: Math.random(),
-          }),
-        }),
-      });
+      const reactDiv = React.createElement(
+        "div",
+        {
+          className: "hello-world",
+        },
+        React.createElement(
+          "span",
+          {},
+          React.createElement("strong", {}, Math.random()),
+          React.createElement("mark", {}, " - this is a random number")
+        )
+      );
+
+      React.createElement(
+        "div", // 1. tag
+        { className: "hello-world" },
+        "test"
+      );
+
       ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
     </script>
   </body>
